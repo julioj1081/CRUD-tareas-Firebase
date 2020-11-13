@@ -13,7 +13,7 @@ const guardatarea = (titulo, descripcion) => {
         titulo,
         descripcion
     });
-    alertify.success('Success message');
+    alertify.success('Tarea guardada con exito!');
 }
 //traer tarea
 const getTareas = () => db.collection('tareas').get();
@@ -54,7 +54,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             btnsDelete.forEach(btn => {
                 btn.addEventListener("click", async (e) => {
                     await deletetarea(e.target.dataset.id);
-                    alertify.error('Borrado con exito');
+                    alertify.error('Borrado con exito !');
                 })
             });
             //para editar
@@ -96,7 +96,7 @@ tareaform.addEventListener('submit', async (e) => {
         })
         editstatus = false;
         tareaform["btn-tarea"].innerHTML = "Guardar tarea";
-        alertify.warning('Modificado con exito');
+        alertify.message('Modificado con exito !');
     }
     tareaform.reset();
 }); 
