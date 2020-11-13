@@ -1,4 +1,4 @@
-var db = firebase.firestore();
+ var db = firebase.firestore();
 
 const tareaform = document.querySelector("#formulario-tareas");
 const tareacontenedor = document.querySelector("#tareas-contenedor");
@@ -90,4 +90,4 @@ tareaform.addEventListener('submit', async (e) => {
         tareaform["btn-tarea"].innerHTML = "Guardar tarea";
     }
     tareaform.reset();
-})
+}); 
