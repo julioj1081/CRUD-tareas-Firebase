@@ -6,12 +6,14 @@ const tareacontenedor = document.querySelector("#tareas-contenedor");
 let editstatus = false;
 let id;
 
+
 //guardar tarea
 const guardatarea = (titulo, descripcion) => {
     db.collection('tareas').doc().set({
         titulo,
         descripcion
     });
+    alertify.success('Success message');
 }
 //traer tarea
 const getTareas = () => db.collection('tareas').get();
@@ -25,7 +27,7 @@ const deletetarea = id => db.collection('tareas').doc(id).delete();
 const gettarea = (id) => db.collection('tareas').doc(id).get();
 
 //edita una tarea
-const uptadetarea = (id, modificatarea) => db.collection('tareas').doc(id).update(modificatarea);
+const modificartarea = (id, modificatarea) => db.collection('tareas').doc(id).update(modificatarea);
 
 
 window.addEventListener('DOMContentLoaded', async (e) => {
@@ -52,6 +54,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             btnsDelete.forEach(btn => {
                 btn.addEventListener("click", async (e) => {
                     await deletetarea(e.target.dataset.id);
+                    alertify.error('Borrado con exito');
                 })
             });
             //para editar
@@ -73,21 +76,27 @@ window.addEventListener('DOMContentLoaded', async (e) => {
     })
 });
 
+
+
+
 tareaform.addEventListener('submit', async (e) => {
     e.preventDefault();
+    
     const titulo = tareaform["titulo-tarea"].value;
     const descripcion = tareaform["descripcion-tarea"].value;
     //si el estado es falso guarda sino edita
     if (!editstatus) {
-        await guardatarea(titulo, descripcion);
+            await guardatarea(titulo, descripcion); 
+       
     } else {
         //si es editalo
-        await modificatarea(id, {
+        await modificartarea(id, {
             titulo: titulo,
             descripcion: descripcion
         })
         editstatus = false;
         tareaform["btn-tarea"].innerHTML = "Guardar tarea";
+        alertify.warning('Modificado con exito');
     }
     tareaform.reset();
 }); 
