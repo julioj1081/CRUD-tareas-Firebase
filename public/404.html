@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firabase crud tareas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/yeti/bootstrap.min.css" integrity="sha384-mLBxp+1RMvmQmXOjBzRjqqr0dP9VHU2tb3FK6VB0fJN/AOu7/y+CAeYeWJZ4b3ii" crossorigin="anonymous"></head>
+    <link rel="stylesheet" href="css/alertify.min.css">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+        }
+    </style>
+<body>
+  
+    <div class="container pt-3">
+        <h2 class="text-muted">Crud tareas firebase</h2>
+        <div class="row">
+            <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <form id="formulario-tareas">
+                        <div class="form-group">
+                            <input required class="form-control" id="titulo-tarea" type="text" placeholder="Ingresa titulo tarea" />
+                            <textarea required class="form-control mt-3" id="descripcion-tarea" placeholder="Desc tarea"></textarea>
+                            <button class="btn btn-primary mt-3" id="btn-tarea">Guardar tarea</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-8" id="tareas-contenedor" style="overflow-y:scroll; height:80vh;"></div>
+        </div>
+    </div>
+
+
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-firestore.js"></script>
+     --><script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyCrN3DZuEtvyVbJOF1pQquv635Z6Ua1lM8",
+  authDomain: "crud-tareas-a0381.firebaseapp.com",
+  databaseURL: "https://crud-tareas-a0381.firebaseio.com",
+  projectId: "crud-tareas-a0381",
+  storageBucket: "crud-tareas-a0381.appspot.com",
+  messagingSenderId: "642200115839",
+  appId: "1:642200115839:web:023b323c8897f9f086fd4a",
+  measurementId: "G-7T4MXDBXKW"
+      
+     };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="js/app.js"></script>
+    <script src="js/alertify.min.js"></script>
+</body>
+</html>
