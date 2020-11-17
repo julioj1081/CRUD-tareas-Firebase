@@ -43,8 +43,8 @@ window.addEventListener('DOMContentLoaded', async (e) => {
                 <h5>${task.titulo}</h5>
                 <p>${task.descripcion}</p>
                 <div>
-                    <button class="btn btn-danger btn-delete" data-id="${task.id}">Delete</button>
-                    <button class="btn btn-primary btn-edit" data-id="${task.id}" >Edit</button>
+                    <button class="btn btn-danger btn-delete" data-id="${task.id}">Borrar</button>
+                    <button class="btn btn-primary btn-edit" data-id="${task.id}" >Eliminar</button>
                 </div>
             </div>
             `;
@@ -96,7 +96,7 @@ tareaform.addEventListener('submit', async (e) => {
         })
         editstatus = false;
         tareaform["btn-tarea"].innerHTML = "Guardar tarea";
-        alertify.message('Modificado con exito !');
+        alertify.success('Modificado con exito !');
     }
     tareaform.reset();
 }); 
