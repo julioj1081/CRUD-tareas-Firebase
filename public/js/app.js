@@ -44,7 +44,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
                 <p>${task.descripcion}</p>
                 <div>
                     <button class="btn btn-danger btn-delete" data-id="${task.id}">Borrar</button>
-                    <button class="btn btn-primary btn-edit" data-id="${task.id}" >Eliminar</button>
+                    <button class="btn btn-primary btn-edit" data-id="${task.id}" >Editar</button>
                 </div>
             </div>
             `;
@@ -67,7 +67,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
                     tareaform["descripcion-tarea"].value = task.descripcion;
                     editstatus = true;
                     //llamamos al boton de btn-task form 
-                    tareaform["btn-tarea"].innerText = 'update';
+                    tareaform["btn-tarea"].innerText = 'Editar';
                     id = tarea.id;
                     //console.log(id);
                 })
